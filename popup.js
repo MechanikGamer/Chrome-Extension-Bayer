@@ -12,7 +12,7 @@ document.getElementById("paste-btn").addEventListener("click", function () {
   });
 
   chrome.storage.sync.get(["country"], function (data) {
-    document.getElementById("Country").textContent = data.country;
+    document.getElementById("country").textContent = data.country;
   });
   
   // This function will be injected into the active tab
@@ -21,9 +21,9 @@ document.getElementById("paste-btn").addEventListener("click", function () {
       // Paste the MaterialGroup value wherever needed on www.howdoc.no
       console.log("Material Group:", data.materialGroup);
     });
-    chrome.storage.sync.get(["Country"], function (data) {
+    chrome.storage.sync.get(["country"], function (data) {
       // Paste the MaterialGroup value wherever needed on www.howdoc.no
-      console.log("County:", data.Country);
+      console.log("county:", data.country);
     });
   }
   

@@ -6,7 +6,7 @@
     "permissions": ["tabs", "storage", "activeTab","scripting"],
     "action": {
       
-      "default_title": "Ariba Material Group Copier",
+      "default_title": "Ariba PR Helper",
       "default_popup": "popup.html",
       "permissions": ["https://s1-eu.ariba.com/*", "https://proview-ui.prod.daaa.cloud/*", "scripting" ,"storage"]
     },

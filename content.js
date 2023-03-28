@@ -3,7 +3,7 @@ let Step1 = false;
 
 // GlobalVariables
 let MaterialGroup;
-let Country;
+let country;
 
 // Material Number from Ariba not Cristal
 function AribaDownloadMaterial() {
@@ -37,17 +37,16 @@ function AribaDownloadCountry()
 
   let LastWordCountry = getLastWord(TextnoSpecialChars)
   let LastWordlCountryNoSpace = LastWordCountry.replace(/\s/g, '') 
-  Country = LastWordlCountryNoSpace;
+  country = LastWordlCountryNoSpace;
   console.log(LastWordlCountryNoSpace);
-  return Country;
+  return country;
 }
 
 function checkURL() {
     if (window.location.href.includes('eu.ariba.com')) {
       AribaDownloadMaterial();
       AribaDownloadCountry();
-      chrome.storage.sync.set({ materialGroup: MaterialGroup, Country: Country});
-      
+      chrome.storage.sync.set({ materialGroup: MaterialGroup, country: country});
     } else if (window.location.href.includes('proview')) {
       chrome.storage.sync.get(['materialGroup'], function (data) {
         // Paste the MaterialGroup value wherever needed on www.howdoc.no
