@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Ariba Material Group Copier",
+    "name": "Ariba PR Helper",
     "version": "0.1",
-    "description": "Copy Material Group from Ariba and paste it on Howdoc",
+    "description": "Helper for Ariba",
     "permissions": ["tabs", "storage", "activeTab","scripting"],
     "action": {
       
