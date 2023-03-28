@@ -1,18 +1,18 @@
 {
     "manifest_version": 3,
     "name": "Ariba Material Group Copier",
-    "version": "1.0",
+    "version": "0.1",
     "description": "Copy Material Group from Ariba and paste it on Howdoc",
     "permissions": ["tabs", "storage", "activeTab","scripting"],
     "action": {
       
       "default_title": "Ariba Material Group Copier",
       "default_popup": "popup.html",
-      "permissions": ["https://s1-eu.ariba.com/*", "http://www.howdoc.no/*", "scripting"]
+      "permissions": ["https://s1-eu.ariba.com/*", "https://proview-ui.prod.daaa.cloud/*", "scripting" ,"storage"]
     },
     "content_scripts": [
       {
-        "matches": ["https://s1-eu.ariba.com/*", "http://www.howdoc.no/*"],
+        "matches": ["https://s1-eu.ariba.com/*", "https://proview-ui.prod.daaa.cloud/*"],
         "js": ["content.js"]
       }
     ]
