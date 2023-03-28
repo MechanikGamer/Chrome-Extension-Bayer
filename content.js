@@ -4,6 +4,7 @@ let Step1 = false;
 // GlobalVariables
 let MaterialGroup;
 let country;
+let price;
 
 // Material Number from Ariba not Cristal
 function AribaDownloadMaterial() {
@@ -20,6 +21,7 @@ function AribaDownloadMaterial() {
   return MaterialGroup;
 }
 
+//download country name from Ariba
 function AribaDownloadCountry()
 {
   let DownloadTagCountry = document.getElementsByClassName(
@@ -42,14 +44,60 @@ function AribaDownloadCountry()
   return country;
 }
 
+
+//Download Price
+function AribaDownloadPrice()
+{
+  let DownloadTagPrice = document.getElementsByClassName(
+    'grayVeryLt noWrap'
+  );
+  let ChildPrice = DownloadTagPrice[0].children[2].innerHTML
+  let TextoutCountry2 = ChildPrice;
+
+  const TextnoSpecialChars2 = TextoutCountry2.replace(/[^a-zA-Z0-9 ]/g, '');
+  function getLastWord(TextnoSpecialChars2) {
+    var n = TextnoSpecialChars2.lastIndexOf(" ");
+  
+    var res = TextnoSpecialChars2.substring(n);
+    return res;
+  }
+
+  let LastWordCountry = getLastWord(TextnoSpecialChars2)
+  //split text 
+  let index = TextnoSpecialChars2.indexOf(' ');
+    let textModified = TextnoSpecialChars2.substring(0, index);
+
+// Remove last 2 characters of string
+textModified = textModified.substring(0, textModified.length - 2);
+price = textModified;
+// Print result string
+return price;
+}
+
+//Download Currency
+// function AribaDownloadCurrency()
+// {
+//   let DownloadTagPrice = document.getElementsByClassName(
+//     'grayVeryLt noWrap'
+//   );
+//   let ChildPrice = DownloadTagPrice[0].children[2].innerHTML
+//   console.log(ChildPrice)
+// }
+
+
+
+
+
+
 function checkURL() {
     if (window.location.href.includes('eu.ariba.com')) {
       AribaDownloadMaterial();
       AribaDownloadCountry();
-      chrome.storage.sync.set({ materialGroup: MaterialGroup, country: country});
+      AribaDownloadPrice()
+      chrome.storage.sync.set({ materialGroup: MaterialGroup, country: country, price: price});
     } else if (window.location.href.includes('proview')) {
       chrome.storage.sync.get(['materialGroup'], function (data) {
-        // Paste the MaterialGroup value wherever needed on www.howdoc.no
+        // Paste the MaterialGroup value wherever needed on www.howdoc.com
         console.log('Material Group:', data.materialGroup);
       });
     }
