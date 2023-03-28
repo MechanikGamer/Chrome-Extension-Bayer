@@ -18,6 +18,10 @@ document.getElementById("paste-btn").addEventListener("click", function () {
   chrome.storage.sync.get(["price"], function (data) {
     document.getElementById("price").textContent = data.price;
   });
+
+  chrome.storage.sync.get(["valuta"], function (data) {
+    document.getElementById("valuta").textContent = data.valuta;
+  });
   
   // This function will be injected into the active tab
   function pasteMaterialGroup() {
