@@ -7,14 +7,7 @@ document.getElementById("paste-btn").addEventListener("click", function () {
     });
   });
 
-  document.getElementById("copyTextMaterial").addEventListener("click", function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.scripting.executeScript({
-        target: { tabId: tabs[0].id },
-        function: copyTextMaterial,
-      });
-    });
-  });
+
   
   chrome.storage.sync.get(["materialGroup"], function (data) {
     document.getElementById("material-group").textContent = data.materialGroup;
