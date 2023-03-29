@@ -1,6 +1,6 @@
 0.01A
 -Ariba download Material Group number
-    -Ariba download Group name (doing)
+    -Ariba download Group name
 -Ariba download Country
 -Ariba download Price
     -Ariba download Currency

@@ -6,6 +6,7 @@ let MaterialGroup;
 let country;
 let price;
 let valuta;
+let MaterialGroupName;
 
 // Material Number from Ariba not Cristal
 function AribaDownloadMaterial() {
@@ -20,6 +21,23 @@ function AribaDownloadMaterial() {
   console.log(MaterialGroup);
   Step1 = true;
   return MaterialGroup;
+}
+
+//Download Material name no Cristal
+function AribaDownloadMaterialName() {
+  let DownloadTag = document.getElementsByClassName(
+    'vaT leg-p-b-5 a-arw-concise-fg-row'
+  );
+  let DownloadChoose = DownloadTag[3];
+  let Textout = DownloadChoose.innerText;
+  let TextnoSpecialCharsGroupName = Textout.replace(/[^a-zA-Z0-9 ]/g, '');
+  MaterialGroupName = TextnoSpecialCharsGroupName; // Variable for MaterialGroup
+  let IndexSpace = MaterialGroupName.indexOf(" ")
+  MaterialGroupName = MaterialGroupName.substring(IndexSpace + 1);
+  console.log(MaterialGroupName);
+  return MaterialGroupName;
+//Dodac wyciecie tylko nazwy
+
 }
 
 //download country name from Ariba
@@ -100,7 +118,12 @@ function checkURL() {
       AribaDownloadCountry();
       AribaDownloadPrice();
       AribaDownloadCurrency();
-      chrome.storage.sync.set({ materialGroup: MaterialGroup, country: country, price: price, valuta: valuta});
+      AribaDownloadMaterialName()
+      chrome.storage.sync.set({ 
+        materialGroup: MaterialGroup, 
+        country: country, price: price, 
+        valuta: valuta,
+        MaterialGroupName: MaterialGroupName});
     } else if (window.location.href.includes('proview')) {
       chrome.storage.sync.get(['materialGroup'], function (data) {
         // Paste the MaterialGroup value wherever needed on www.howdoc.com
