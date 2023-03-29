@@ -19,7 +19,6 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
 **Currently tested on Chrome, The following guide is for Chrome:**
 
 1. Visit the Chrome Web Store at: https://chrome.google.com/webstore
-   * Visit the Chrome Web Store at: https://chrome.google.com/webstore
    * In the search bar, type the name of the extension for Ariba Pr Helper.
    * Locate the extension in the search results, and click the "Add to Chrome" button.
    * A pop-up window will appear. Click "Add extension" to confirm the installation.
