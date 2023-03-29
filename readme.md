@@ -8,11 +8,12 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
 
 ### Features/Changelog
 0.01A 
-   * Ariba download Material Group number
-    * Ariba download Group name
+   * Ariba download Material Group number 
+     * Ariba download Group name
    * Ariba download Country
    * Ariba download Price
      * Ariba download Currency
+
    * Added Styling
 
 ### How to Run
