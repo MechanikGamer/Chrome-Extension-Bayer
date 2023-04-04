@@ -8,7 +8,7 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
 
 ### Features/Changelog
 0.02A 
-   * 
+   * Added help file for Paste
 
 0.01A 
    * Ariba download Material Group number 
