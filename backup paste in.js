@@ -1,4 +1,4 @@
-function PasteInn()
+function PasteIn()
 {
     // if link https://proview-ui.prod.daaa.cloud/taxonomy
     if (window.location.toString().includes("taxonomy"))
