@@ -10,7 +10,9 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
 0.02A 
    * Added help file for Paste
    * Removed Paste on HowDoc button 
-   * Added PasteIn Material to HowDoc 2.0 (Still working not auto)
+   * Added PasteIn Material to HowDoc 2.0 (still working have to change a character before search)
+   * Added HowDoc 2.0 Paste Material and Country (still working have to change a character before search)
+
 
 
 0.01A 

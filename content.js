@@ -7,7 +7,10 @@ let country;
 let price;
 let valuta;
 let MaterialGroupName;
+
+//Flags for action Proview
 let Nottriggered = 0;
+let NottriggeredHD2 = 0;
 
 let MaterialGroupDownloaded;
 
@@ -139,7 +142,7 @@ function checkURL() {
 
 checkURL();
 setInterval(PasteIn, 500)
-
+setInterval(PasteInHowDoc2, 500)
 
 
 
@@ -151,6 +154,10 @@ function PasteIn()
         console.log('Starting TaxonomyFunciton')
         PasteInnHowdocTaxonomy()
         Nottriggered = 1;
+    }
+    if (window.location.toString().includes("taxonomy") === false)
+    {
+      Nottriggered = 0;
     }
     
 }
@@ -183,4 +190,64 @@ function PasteInnHowdocTaxonomy(){
     //remove label
     let DownloadLabel = document.querySelectorAll('.mat-form-field-label-wrapper')
     DownloadLabel[0].innerHTML = ''
+}
+
+
+//adding variables to HowDoc 2.0
+function PasteInHowDoc2()
+{
+    // if link https://proview-ui.prod.daaa.cloud/how-doc2
+    if (window.location.toString().includes("how-doc2") && NottriggeredHD2 === 0 && (typeof MaterialGroupDownloaded !== "undefined"))
+    {
+        console.log('Starting HowDoc2 Function')
+        PasteInnHowdoc2Taxonomy()
+        PasteInnHowdocTaxonomyCountry()
+        NottriggeredHD2 = 1;
+    }
+    if (window.location.toString().includes("how-doc2") === false)
+    {
+      NottriggeredHD2 = 0;
+    }
+    
+}
+
+function PasteInnHowdoc2Taxonomy()
+{
+  
+    //pasting material number
+    let DownloadInputHowDoc2 = document.querySelectorAll('.mat-input-element')
+    DownloadInputHowDoc2[0].value = '' 
+    var i = 0;
+    var txt = MaterialGroupDownloaded ; /* The text */
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+    
+    function typeWriter() {
+      if (i < txt.length) {
+        DownloadInputHowDoc2[0].value += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter()
+}
+
+function PasteInnHowdocTaxonomyCountry()
+{
+  //pasting country
+  let DownloadInputHowDoc2 = document.querySelectorAll('.mat-input-element')
+  DownloadInputHowDoc2[1].value = '' 
+
+  var i = 0;
+  var txt = 'Finland' ; /* The text */
+  var speed = 50; /* The speed/duration of the effect in milliseconds */
+  
+  function typeWriter() {
+    if (i < txt.length) {
+      DownloadInputHowDoc2[1].value += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter()
+
 }
