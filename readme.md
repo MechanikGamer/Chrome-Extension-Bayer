@@ -9,6 +9,9 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
 ### Features/Changelog
 0.02A 
    * Added help file for Paste
+   * Removed Paste on HowDoc button 
+   * Added PasteIn Material to HowDoc 2.0 (Still working not auto)
+
 
 0.01A 
    * Ariba download Material Group number 

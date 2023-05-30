@@ -7,6 +7,9 @@ let country;
 let price;
 let valuta;
 let MaterialGroupName;
+let Nottriggered = 0;
+
+let MaterialGroupDownloaded;
 
 // Material Number from Ariba not Cristal
 function AribaDownloadMaterial() {
@@ -128,8 +131,43 @@ function checkURL() {
       chrome.storage.sync.get(['materialGroup'], function (data) {
         // Paste the MaterialGroup value wherever needed on www.howdoc.com
         console.log('Material Group:', data.materialGroup);
+        MaterialGroupDownloaded = data.materialGroup;
       });
     }
+   
   }
 
 checkURL();
+setInterval(PasteIn, 500)
+
+
+
+
+function PasteIn()
+{
+    // if link https://proview-ui.prod.daaa.cloud/taxonomy
+    if (window.location.toString().includes("taxonomy") && Nottriggered === 0 && (typeof MaterialGroupDownloaded !== "undefined"))
+    {
+        console.log('Starting TaxonomyFunciton')
+        PasteInnHowdocTaxonomy()
+        Nottriggered = 1;
+    }
+    
+}
+
+
+
+
+
+function PasteInnHowdocTaxonomy(){
+    //function for pasting data into //taxonomy
+    let DownloadInputWindow = document.querySelectorAll('[id ^= "mat-input-"]');
+    DownloadInputWindow[0].value = '' 
+    
+
+    DownloadInputWindow[0].value = MaterialGroupDownloaded //testowy material zmienic na zawartosc z pobranego
+
+    //remove label
+    let DownloadLabel = document.querySelectorAll('.mat-form-field-label-wrapper')
+    DownloadLabel[0].innerHTML = ''
+}
