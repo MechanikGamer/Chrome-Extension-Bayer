@@ -165,7 +165,20 @@ function PasteInnHowdocTaxonomy(){
     DownloadInputWindow[0].value = '' 
     
 
-    DownloadInputWindow[0].value = MaterialGroupDownloaded //testowy material zmienic na zawartosc z pobranego
+    var i = 0;
+    var txt = MaterialGroupDownloaded ; /* The text */
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+    
+    function typeWriter() {
+      if (i < txt.length) {
+        DownloadInputWindow[0].value += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter()
+    
+    // DownloadInputWindow[0].value = MaterialGroupDownloaded //testowy material zmienic na zawartosc z pobranego
 
     //remove label
     let DownloadLabel = document.querySelectorAll('.mat-form-field-label-wrapper')
