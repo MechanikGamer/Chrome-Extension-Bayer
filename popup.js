@@ -37,5 +37,11 @@
       console.log("price:", data.price);
     });
   }
+
+//click copy button
+function CopyButton()
+{
+  console.log('copy clicked popup js')
+}
   
 

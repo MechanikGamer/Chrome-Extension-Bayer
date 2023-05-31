@@ -13,6 +13,7 @@ let Nottriggered = 0;
 let NottriggeredHD2 = 0;
 
 let MaterialGroupDownloaded;
+let CountryDownloaded;
 
 // Material Number from Ariba not Cristal
 function AribaDownloadMaterial() {
@@ -135,6 +136,12 @@ function checkURL() {
         // Paste the MaterialGroup value wherever needed on www.howdoc.com
         console.log('Material Group:', data.materialGroup);
         MaterialGroupDownloaded = data.materialGroup;
+        
+        chrome.storage.sync.get(["country"], function (data) {
+          // Paste the MaterialGroup value wherever needed on www.howdoc.no
+          console.log("county:", data.country);
+          CountryDownloaded = data.country;
+        });
       });
     }
    
@@ -238,7 +245,7 @@ function PasteInnHowdocTaxonomyCountry()
   DownloadInputHowDoc2[1].value = '' 
 
   var i = 0;
-  var txt = 'Finland' ; /* The text */
+  var txt = CountryDownloaded ; /* The text */
   var speed = 50; /* The speed/duration of the effect in milliseconds */
   
   function typeWriter() {
@@ -250,4 +257,10 @@ function PasteInnHowdocTaxonomyCountry()
   }
   typeWriter()
 
+}
+
+//click copy button
+function CopyButton()
+{
+  console.log('copy clicked')
 }
