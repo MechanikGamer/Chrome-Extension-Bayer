@@ -179,9 +179,9 @@ function PasteInnHowdocTaxonomy(){
     DownloadInputWindow[0].value = '' 
     
 
-    var i = 0;
-    var txt = MaterialGroupDownloaded ; /* The text */
-    var speed = 50; /* The speed/duration of the effect in milliseconds */
+    let i = 0;
+    let txt = MaterialGroupDownloaded ; /* The text */
+    let speed = 50; /* The speed/duration of the effect in milliseconds */
     
     function typeWriter() {
       if (i < txt.length) {
@@ -224,9 +224,9 @@ function PasteInnHowdoc2Taxonomy()
     //pasting material number
     let DownloadInputHowDoc2 = document.querySelectorAll('.mat-input-element')
     DownloadInputHowDoc2[0].value = '' 
-    var i = 0;
-    var txt = MaterialGroupDownloaded ; /* The text */
-    var speed = 50; /* The speed/duration of the effect in milliseconds */
+    let i = 0;
+    let txt = MaterialGroupDownloaded ; /* The text */
+    let speed = 50; /* The speed/duration of the effect in milliseconds */
     
     function typeWriter() {
       if (i < txt.length) {
@@ -244,9 +244,9 @@ function PasteInnHowdocTaxonomyCountry()
   let DownloadInputHowDoc2 = document.querySelectorAll('.mat-input-element')
   DownloadInputHowDoc2[1].value = '' 
 
-  var i = 0;
-  var txt = CountryDownloaded ; /* The text */
-  var speed = 50; /* The speed/duration of the effect in milliseconds */
+  let i = 0;
+  let txt = CountryDownloaded ; /* The text */
+  let speed = 50; /* The speed/duration of the effect in milliseconds */
   
   function typeWriter() {
     if (i < txt.length) {
@@ -259,8 +259,3 @@ function PasteInnHowdocTaxonomyCountry()
 
 }
 
-//click copy button
-function CopyButton()
-{
-  console.log('copy clicked')
-}

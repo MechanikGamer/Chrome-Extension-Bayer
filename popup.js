@@ -38,10 +38,5 @@
     });
   }
 
-//click copy button
-function CopyButton()
-{
-  console.log('copy clicked popup js')
-}
-  
+
 
