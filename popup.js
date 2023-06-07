@@ -1,4 +1,6 @@
 let MaterialGroup;
+let Country;
+let Price; 
   
  
  
@@ -9,10 +11,12 @@ let MaterialGroup;
 
   chrome.storage.sync.get(["country"], function (data) {
     document.getElementById("country").textContent = data.country;
+    Country = data.country
   });
 
   chrome.storage.sync.get(["price"], function (data) {
     document.getElementById("price").textContent = data.price;
+    Price = data.price
   });
 
   chrome.storage.sync.get(["valuta"], function (data) {
@@ -41,14 +45,43 @@ let MaterialGroup;
     });
   }
 
+  //button copy at Material
   let DownloadButtonCopyMaterial = document.getElementById("buttonmaterial")
   DownloadButtonCopyMaterial.addEventListener("click", CopyMaterialFunction);
 
   function CopyMaterialFunction()
   {
-   
+    DownloadButtonCopyMaterial.classList.add("active")
     navigator.clipboard.writeText(MaterialGroup);
+    setTimeout(function(){
+      DownloadButtonCopyMaterial.classList.remove("active")
+    },2500)
   }
 
+  //button copy at Country
+  let DownloadButtonCopyCountry = document.getElementById("buttoncountry")
+  DownloadButtonCopyCountry.addEventListener("click", CopyCountryFunction);
+
+  function CopyCountryFunction()
+  {
+    DownloadButtonCopyCountry.classList.add("active")
+    navigator.clipboard.writeText(Country);
+    setTimeout(function(){
+      DownloadButtonCopyCountry.classList.remove("active")
+    },2500)
+  }
+
+  //Button copy at Price
+  let DownloadButtonCopyPrice = document.getElementById("buttonprice")
+  DownloadButtonCopyPrice.addEventListener("click", CopyPriceFunction);
+
+  function CopyPriceFunction()
+  {
+    DownloadButtonCopyPrice.classList.add("active")
+    navigator.clipboard.writeText(Price);
+    // setTimeout(function(){
+    //   DownloadButtonCopyPrice.classList.remove("active")
+    // },2500)
+  }
 
 
