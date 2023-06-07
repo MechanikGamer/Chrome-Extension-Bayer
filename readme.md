@@ -15,9 +15,6 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
    * Added Copy buttons 
    * Added Favicon
 
-
-
-
 0.01A 
    * Ariba download Material Group number 
      * Ariba download Group name
@@ -49,6 +46,8 @@ You're all set! Enjoy the convenience and time-saving benefits of the Chrome ext
 * Space in price when 20 000
 * Copy PR Number and button
 * Paste to SmartDesk 
+* Copy PR (to do) 
+
 * Styling
 
 ### Want to Contribute?

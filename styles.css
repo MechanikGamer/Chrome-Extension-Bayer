@@ -88,7 +88,7 @@ background-color: #cccccc;
   content:"Copied";
   position: absolute;
   top: 80px;
-  right:350px;
+  right:345px;
   background:#5c81dc;
   padding:8px 10px;
   border-radius:20px;
@@ -100,12 +100,13 @@ background-color: #cccccc;
   content:"";
   position:absolute;
   top: 110px;
-  left: 150px;
+  left: 155px;
   width: 10px;
   height: 10px;
   background: #5c81dc;
   transform: rotate(45deg);
 }
+
 
 /* END button 2 */
 
@@ -129,7 +130,7 @@ background-color: #cccccc;
   content:"Copied";
   position: absolute;
   top: 125px;
-  right:365px;
+  right:350px;
   background:#5c81dc;
   padding:8px 10px;
   border-radius:20px;
@@ -141,7 +142,7 @@ background-color: #cccccc;
   content:"";
   position:absolute;
   top: 155px;
-  left: 135px;
+  left: 150px;
   width: 10px;
   height: 10px;
   background: #5c81dc;
@@ -149,6 +150,46 @@ background-color: #cccccc;
 }
 
 /* END button 3 */ 
+
+/* button 4 pr */
+.copy-link-button3
+{
+  color: #333333;
+  outline: none;
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+}
+
+.copy-link-button3:hover
+{
+background-color: #cccccc;
+}
+
+#buttonpr.active:before
+{
+  content:"Copied";
+  position: absolute;
+  top: 125px;
+  right:350px;
+  background:#5c81dc;
+  padding:8px 10px;
+  border-radius:20px;
+  font-size: 15px;
+}
+
+#buttonpr.active:after
+{
+  content:"";
+  position:absolute;
+  top: 155px;
+  left: 150px;
+  width: 10px;
+  height: 10px;
+  background: #5c81dc;
+  transform: rotate(45deg);
+}
+
+/* END button 4 pr*/ 
 
 
 

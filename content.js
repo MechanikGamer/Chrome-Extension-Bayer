@@ -7,6 +7,8 @@ let country;
 let price;
 let valuta;
 let MaterialGroupName;
+let PR;
+let PRNumber;
 
 //Flags for action Proview
 let Nottriggered = 0;
@@ -14,6 +16,23 @@ let NottriggeredHD2 = 0;
 
 let MaterialGroupDownloaded;
 let CountryDownloaded;
+
+
+//Download PR from Ariba
+function AribaDownloadPR(){
+  let DownloadTagPR = document.getElementsByClassName(
+    'grayVeryLt noWrap'
+  );
+  let ChildPR = DownloadTagPR[0].children[0].innerText
+  PR = ChildPR
+  console.log(PR);
+  let numberPR = PR.replace(/[^0-9 ]/g, '');
+  PRNumber = numberPR
+ 
+  console.log('PR number is ', numberPR)
+  return PR;
+  
+}
 
 // Material Number from Ariba not Cristal
 function AribaDownloadMaterial() {
@@ -123,13 +142,17 @@ function checkURL() {
     if (window.location.href.includes('eu.ariba.com')) {
       AribaDownloadMaterial();
       AribaDownloadCountry();
+      AribaDownloadPR();
       AribaDownloadPrice();
       AribaDownloadCurrency();
       AribaDownloadMaterialName()
       chrome.storage.sync.set({ 
         materialGroup: MaterialGroup, 
-        country: country, price: price, 
+        country: country, 
+        price: price, 
         valuta: valuta,
+        PRNumber, PRNumber,
+        PR: PR,
         MaterialGroupName: MaterialGroupName});
     } else if (window.location.href.includes('proview')) {
       chrome.storage.sync.get(['materialGroup'], function (data) {
@@ -191,8 +214,6 @@ function PasteInnHowdocTaxonomy(){
       }
     }
     typeWriter()
-    
-    // DownloadInputWindow[0].value = MaterialGroupDownloaded //testowy material zmienic na zawartosc z pobranego
 
     //remove label
     let DownloadLabel = document.querySelectorAll('.mat-form-field-label-wrapper')

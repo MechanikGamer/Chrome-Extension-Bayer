@@ -1,8 +1,14 @@
 let MaterialGroup;
 let Country;
 let Price; 
+let PR;
+let PRNumber;
   
- 
+chrome.storage.sync.get(["PRNumber"], function (data) {
+  document.getElementById("prnumber").textContent = data.PRNumber;
+  PRNumber = data.PRNumber
+});
+
  
   chrome.storage.sync.get(["materialGroup"], function (data) {
     document.getElementById("material-group").textContent = data.materialGroup;
@@ -79,9 +85,26 @@ let Price;
   {
     DownloadButtonCopyPrice.classList.add("active")
     navigator.clipboard.writeText(Price);
-    // setTimeout(function(){
-    //   DownloadButtonCopyPrice.classList.remove("active")
-    // },2500)
+    setTimeout(function(){
+      DownloadButtonCopyPrice.classList.remove("active")
+    },2500)
   }
+
+  //button copy PR
+  let DownloadButtonCopyPR = document.getElementById("buttonpr")
+  DownloadButtonCopyPR.addEventListener("click", CopyPRFunction);
+
+  function CopyPRFunction()
+  {
+    DownloadButtonCopyPR.classList.add("active")
+    navigator.clipboard.writeText('PR' + PRNumber);
+    setTimeout(function(){
+      DownloadButtonCopyPR.classList.remove("active")
+    },2500)
+  }
+
+
+
+  
 
 
