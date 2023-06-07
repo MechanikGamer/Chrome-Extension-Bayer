@@ -14,6 +14,7 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
    * Added HowDoc 2.0 Paste Material and Country (still working have to change a character before search)
    * Added Copy buttons 
    * Added Favicon
+   * Added Copy PR Number and button
 
 0.01A 
    * Ariba download Material Group number 
@@ -44,7 +45,6 @@ You're all set! Enjoy the convenience and time-saving benefits of the Chrome ext
 
 ### TO DO
 * Space in price when 20 000
-* Copy PR Number and button
 * Paste to SmartDesk 
 * Copy PR (to do) 
 
