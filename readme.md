@@ -7,6 +7,11 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
 
 
 ### Features/Changelog
+0.03A 
+   * Fixed Styling
+   * ON/OFF button (working)
+
+
 0.02A 
    * Added help file for Paste
    * Removed Paste on HowDoc button 

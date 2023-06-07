@@ -57,10 +57,14 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
 
   function CopyMaterialFunction()
   {
-    DownloadButtonCopyMaterial.classList.add("active")
+    let SpanBanner2 = document.getElementById("copied2banner")
+    SpanBanner2.classList.add("copied-info")
+    SpanBanner2.innerHTML = `\n            \n            <span>\n    <img src="copiedinfo.png" />    </span>`
     navigator.clipboard.writeText(MaterialGroup);
+
     setTimeout(function(){
-      DownloadButtonCopyMaterial.classList.remove("active")
+      SpanBanner2.classList.remove("copied-info")
+      SpanBanner2.innerHTML = `\n            \n            <span>\n     </span>`
     },2500)
   }
 
@@ -70,10 +74,13 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
 
   function CopyCountryFunction()
   {
-    DownloadButtonCopyCountry.classList.add("active")
+    let SpanBanner3 = document.getElementById("copied3banner")
+    SpanBanner3.classList.add("copied-info")
+    SpanBanner3.innerHTML = `\n            \n            <span>\n    <img src="copiedinfo.png" />    </span>`
     navigator.clipboard.writeText(Country);
     setTimeout(function(){
-      DownloadButtonCopyCountry.classList.remove("active")
+      SpanBanner3.classList.remove("copied-info")
+      SpanBanner3.innerHTML = `\n            \n            <span>\n     </span>`
     },2500)
   }
 
@@ -83,10 +90,13 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
 
   function CopyPriceFunction()
   {
-    DownloadButtonCopyPrice.classList.add("active")
+    let SpanBanner4 = document.getElementById("copied4banner")
+    SpanBanner4.classList.add("copied-info")
+    SpanBanner4.innerHTML = `\n            \n            <span>\n    <img src="copiedinfo.png" />    </span>`
     navigator.clipboard.writeText(Price);
     setTimeout(function(){
-      DownloadButtonCopyPrice.classList.remove("active")
+      SpanBanner4.classList.remove("copied-info")
+      SpanBanner4.innerHTML = `\n            \n            <span>\n     </span>`
     },2500)
   }
 
@@ -96,10 +106,14 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
 
   function CopyPRFunction()
   {
-    DownloadButtonCopyPR.classList.add("active")
+    let SpanBanner1 = document.getElementById("copied1banner")
+    SpanBanner1.classList.add("copied-info")
+    SpanBanner1.innerHTML = `\n            \n            <span>\n    <img src="copiedinfo.png" />    </span>`
     navigator.clipboard.writeText('PR' + PRNumber);
+
     setTimeout(function(){
-      DownloadButtonCopyPR.classList.remove("active")
+      SpanBanner1.classList.remove("copied-info")
+      SpanBanner1.innerHTML = `\n            \n            <span>\n     </span>`
     },2500)
   }
 
