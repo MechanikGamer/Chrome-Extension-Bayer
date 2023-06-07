@@ -13,6 +13,8 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
    * Added PasteIn Material to HowDoc 2.0 (still working have to change a character before search)
    * Added HowDoc 2.0 Paste Material and Country (still working have to change a character before search)
    * Added Copy buttons 
+   * Added Favicon
+
 
 
 
@@ -45,6 +47,9 @@ You're all set! Enjoy the convenience and time-saving benefits of the Chrome ext
 
 ### TO DO
 * Space in price when 20 000
+* Copy PR Number and button
+* Paste to SmartDesk 
+
 
 ### Want to Contribute?
 Do you have a passion for web technologies and an interest in contributing to a Chrome extension? 🚀 Get in touch with the author to learn how you can get involved. Your enthusiasm and skills can make a real difference! 🌐💻🤝
