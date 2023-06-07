@@ -49,7 +49,7 @@ You're all set! Enjoy the convenience and time-saving benefits of the Chrome ext
 * Space in price when 20 000
 * Copy PR Number and button
 * Paste to SmartDesk 
-
+* Styling
 
 ### Want to Contribute?
 Do you have a passion for web technologies and an interest in contributing to a Chrome extension? 🚀 Get in touch with the author to learn how you can get involved. Your enthusiasm and skills can make a real difference! 🌐💻🤝
