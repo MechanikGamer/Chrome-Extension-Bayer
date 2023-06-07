@@ -1,7 +1,10 @@
-
+let MaterialGroup;
   
+ 
+ 
   chrome.storage.sync.get(["materialGroup"], function (data) {
     document.getElementById("material-group").textContent = data.materialGroup;
+    MaterialGroup = data.materialGroup
   });
 
   chrome.storage.sync.get(["country"], function (data) {
@@ -36,6 +39,15 @@
       // Paste the MaterialGroup value wherever needed on www.howdoc.no
       console.log("price:", data.price);
     });
+  }
+
+  let DownloadButtonCopyMaterial = document.getElementById("buttonmaterial")
+  DownloadButtonCopyMaterial.addEventListener("click", CopyMaterialFunction);
+
+  function CopyMaterialFunction()
+  {
+   
+    navigator.clipboard.writeText(MaterialGroup);
   }
 
 

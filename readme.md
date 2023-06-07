@@ -12,6 +12,7 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
    * Removed Paste on HowDoc button 
    * Added PasteIn Material to HowDoc 2.0 (still working have to change a character before search)
    * Added HowDoc 2.0 Paste Material and Country (still working have to change a character before search)
+   * Added Copy buttons 
 
 
 

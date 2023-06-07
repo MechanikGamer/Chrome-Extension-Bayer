@@ -6,7 +6,7 @@ body {
 
 #popup-content {
   padding: 20px;
-  width: 400px;
+  width: 500px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #f8f9fa;
   border-radius: 6px;
@@ -27,21 +27,17 @@ p {
   color: #212529;
 }
 
-button {
-  background-color: #007bff;
-  border: none;
-  color: white;
+.copy-link-button
+{
+  color: #333333;
+  outline: none;
+  border: 1px solid #eeeeee;
   cursor: pointer;
-  padding: 12px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 4px;
-  transition-duration: 0.4s;
 }
 
-button:hover {
-  background-color: #0056b3;
+.copy-link-button:hover
+{
+background-color: #cccccc;
 }
+
+
