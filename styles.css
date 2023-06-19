@@ -36,6 +36,15 @@ i.copy-icon {
   top: 14px;
   left: 230px;
 }
+
+i.copy-icon:hover {
+  filter: brightness(50%);
+}
+
+
+
+
+
 .info-box {
   display: inline;
   margin-left: 50px;
@@ -51,10 +60,12 @@ i.info-icon {
   left: 0;
 }
 
+
 span.copied-info {
   position: absolute;
   top: -28px;
   left: -18px;
+  
   
 }
 .onoff {
