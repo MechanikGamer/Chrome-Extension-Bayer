@@ -3,6 +3,17 @@ let Country;
 let Price; 
 let PR;
 let PRNumber;
+// Define button and initial state
+let button = document.getElementById("onoffbutton");
+let buttonState = 'on';
+
+
+  
+
+  
+
+
+
   
 chrome.storage.sync.get(["PRNumber"], function (data) {
   document.getElementById("prnumber").textContent = data.PRNumber;
@@ -33,8 +44,6 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
     document.getElementById("MaterialGroupName").textContent = data.MaterialGroupName;
   });
 
-  
-  
   // This function will be injected into the active tab
   function pasteMaterialGroup() {
     chrome.storage.sync.get(["materialGroup"], function (data) {
@@ -117,8 +126,78 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
     },2500)
   }
 
+  // //On and off button
+  // let Downloadonoffbutton = document.getElementById("onoffbutton");
+  // Downloadonoffbutton.addEventListener("click", ButtonClickedFunction);
+
+  // function ButtonClickedFunction()
+  // {
+  //   if (Buttonstatus === true && buttonState==="off")
+  //   {
+  //     let IconDownload = document.getElementById("buttononofficon");
+  //     IconDownload.classList.toggle("no-active"); 
+  //     Buttonstatus = false;
+  //     console.log(Buttonstatus)
+  //     return;
+  //   }
+  //   if (Buttonstatus === false && buttonState==="on")
+  //   {
+  //     let IconDownload = document.getElementById("buttononofficon");
+  //     IconDownload.classList.toggle("no-active"); 
+  //     Buttonstatus = true;
+  //     console.log(Buttonstatus)
+  //     return;
+  //   }
+  // }
+
 
 
   
+//Button on and off
+// On startup, set button state
+chrome.storage.sync.get(['buttonState'], function(result) {
+  buttonState = result.buttonState || 'on';
+});
+  
+
+// Attach event listener to the button
+button.addEventListener('click', function() {
+  // Toggle button state
+  buttonState = buttonState === 'on' ? 'off' : 'on';
+  
+
+
+  // Store button state only if it is 'off'
+  if(buttonState === 'off')
+  {
+    chrome.storage.sync.set({buttonState: buttonState}, function() {
+    });
+  }
+  if(buttonState === 'on')
+  {
+    chrome.storage.sync.set({buttonState: buttonState}, function() {
+      
+    });
+  }
+});
+
+function CheckButtonState()
+{
+  let IconDownload = document.getElementById("buttononofficon");
+  if (buttonState === 'off')
+  {
+        IconDownload.classList = ''
+        IconDownload.classList = 'no-active'; 
+  }
+  if (buttonState === 'on')
+  {
+    IconDownload.classList = '';
+    IconDownload.classList = 'active'; 
+  }
+}
+
+setInterval(CheckButtonState, 500)
+
+
 
 

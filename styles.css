@@ -3,7 +3,9 @@ body {
 font-family: 'Inter', sans-serif;
 color: #252525;
 font-size:16px;
+margin: 0px;
 }
+
 .ah-container {
   width: 500px;
   max-height: 330px;
@@ -41,10 +43,6 @@ i.copy-icon:hover {
   filter: brightness(50%);
 }
 
-
-
-
-
 .info-box {
   display: inline;
   margin-left: 50px;
@@ -59,7 +57,6 @@ i.info-icon {
   top: 2px;
   left: 0;
 }
-
 
 span.copied-info {
   position: absolute;
@@ -79,6 +76,7 @@ span.copied-info {
   border-radius: 10px;
   box-shadow: inset 0px 0px 10px #0000007d;
 }
+
 span.active {
   display: block;
   background: #c34530;
@@ -88,6 +86,7 @@ span.active {
   border-radius: 10px;
   box-shadow: inset 3px 3px 4px #ebb4ad9e;
 }
+
 span.no-active {
   display: block;
   background: #767676;

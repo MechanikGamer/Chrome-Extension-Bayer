@@ -9,6 +9,7 @@ let valuta;
 let MaterialGroupName;
 let PR;
 let PRNumber;
+let buttonState;
 
 //Flags for action Proview
 let Nottriggered = 0;
@@ -134,12 +135,20 @@ function AribaDownloadCurrency()
 }
 
 
+function ButtonStateDownload()
+{
+    chrome.storage.sync.get(['buttonState'], function (data) {
+      buttonState = data.buttonState || 'on';
+  });
+}
+
+
 
 
 
 
 function checkURL() {
-    if (window.location.href.includes('eu.ariba.com')) {
+    if (window.location.href.includes('eu.ariba.com') &&  buttonState === 'on') {
       AribaDownloadMaterial();
       AribaDownloadCountry();
       AribaDownloadPR();
@@ -151,10 +160,10 @@ function checkURL() {
         country: country, 
         price: price, 
         valuta: valuta,
-        PRNumber, PRNumber,
+        PRNumber: PRNumber,
         PR: PR,
         MaterialGroupName: MaterialGroupName});
-    } else if (window.location.href.includes('proview')) {
+    } else if (window.location.href.includes('proview') &&  buttonState === 'on') {
       chrome.storage.sync.get(['materialGroup'], function (data) {
         // Paste the MaterialGroup value wherever needed on www.howdoc.com
         console.log('Material Group:', data.materialGroup);
@@ -174,12 +183,15 @@ checkURL();
 setInterval(PasteIn, 500)
 setInterval(PasteInHowDoc2, 500)
 
+setInterval(ButtonStateDownload, 300)
+
+
 
 
 function PasteIn()
 {
     // if link https://proview-ui.prod.daaa.cloud/taxonomy
-    if (window.location.toString().includes("taxonomy") && Nottriggered === 0 && (typeof MaterialGroupDownloaded !== "undefined"))
+    if (window.location.toString().includes("taxonomy") && Nottriggered === 0 && (typeof MaterialGroupDownloaded !== "undefined") &&  buttonState === 'on')
     {
         console.log('Starting TaxonomyFunciton')
         PasteInnHowdocTaxonomy()

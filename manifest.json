@@ -8,12 +8,12 @@
       "128": "icon128.png"
     },
     "description": "Helper for Ariba",
-    "permissions": ["tabs", "storage", "activeTab","scripting"],
+    "permissions": ["tabs", "storage", "activeTab","scripting","background"],
     "action": {
       
       "default_title": "Ariba PR Helper",
       "default_popup": "popup.html",
-      "permissions": ["https://s1-eu.ariba.com/*", "https://proview-ui.prod.daaa.cloud/*", "scripting" ,"storage"]
+      "permissions": ["https://s1-eu.ariba.com/*", "https://proview-ui.prod.daaa.cloud/*", "scripting" ,"storage","background"]
     },
     "content_scripts": [
       {
