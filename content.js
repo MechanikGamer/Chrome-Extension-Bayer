@@ -9,10 +9,10 @@ let valuta;
 let MaterialGroupName;
 let PR;
 let PRNumber;
-let buttonState;
+let buttonState = 'on'
 
-//nowy kod
-buttonState = (data.buttonState !== undefined) ? data.buttonState : 'on';
+// //nowy kod
+// buttonState = (data.buttonState !== undefined) ? data.buttonState : 'on';
 
 
 //Flags for action Proview
@@ -138,30 +138,6 @@ function AribaDownloadCurrency()
   return valuta;
 }
 
-
-// function ButtonStateDownload()
-// {
-//     chrome.storage.sync.get(['buttonState'], function (data) {
-//       buttonState = data.buttonState || 'on';
-//   });
-// }
-
-//nowy kod
-
-function ButtonStateDownload() {
-  chrome.storage.sync.get(['buttonState'], function (data) {
-    buttonState = data.buttonState || 'on';
-    checkURL();
-  });
-}
-
-ButtonStateDownload();
-setInterval(ButtonStateDownload, 300);
-//koniec nowego kodu
-
-
-
-
 function checkURL() {
     if (window.location.href.includes('eu.ariba.com') &&  buttonState === 'on') {
       AribaDownloadMaterial();
@@ -201,8 +177,6 @@ setInterval(PasteInHowDoc2, 500)
 setInterval(ButtonStateDownload, 300)
 
 
-
-
 function PasteIn()
 {
     // if link https://proview-ui.prod.daaa.cloud/taxonomy
@@ -218,9 +192,6 @@ function PasteIn()
     }
     
 }
-
-
-
 
 
 function PasteInnHowdocTaxonomy(){
