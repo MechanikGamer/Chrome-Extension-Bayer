@@ -11,6 +11,10 @@ let PR;
 let PRNumber;
 let buttonState;
 
+//nowy kod
+buttonState = (data.buttonState !== undefined) ? data.buttonState : 'on';
+
+
 //Flags for action Proview
 let Nottriggered = 0;
 let NottriggeredHD2 = 0;
@@ -135,14 +139,25 @@ function AribaDownloadCurrency()
 }
 
 
-function ButtonStateDownload()
-{
-    chrome.storage.sync.get(['buttonState'], function (data) {
-      buttonState = data.buttonState || 'on';
+// function ButtonStateDownload()
+// {
+//     chrome.storage.sync.get(['buttonState'], function (data) {
+//       buttonState = data.buttonState || 'on';
+//   });
+// }
+
+//nowy kod
+
+function ButtonStateDownload() {
+  chrome.storage.sync.get(['buttonState'], function (data) {
+    buttonState = data.buttonState || 'on';
+    checkURL();
   });
 }
 
-
+ButtonStateDownload();
+setInterval(ButtonStateDownload, 300);
+//koniec nowego kodu
 
 
 
