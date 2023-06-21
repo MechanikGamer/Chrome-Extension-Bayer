@@ -8,6 +8,7 @@ Hey everyone! As many of you might relate, I've been seeking a more efficient wa
 
 ### Features/Changelog
 0.03A 
+   * Styling
    * Fixed Styling
    * ON/OFF button (working)
 
@@ -52,8 +53,6 @@ You're all set! Enjoy the convenience and time-saving benefits of the Chrome ext
 * Space in price when 20 000
 * Paste to SmartDesk 
 * Copy PR (to do) 
-
-* Styling
 
 ### Want to Contribute?
 Do you have a passion for web technologies and an interest in contributing to a Chrome extension? 🚀 Get in touch with the author to learn how you can get involved. Your enthusiasm and skills can make a real difference! 🌐💻🤝
