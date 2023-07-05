@@ -8,7 +8,7 @@
       "128": "icon128.png"
     },
     "description": "Helper for Ariba",
-    "permissions": ["tabs", "storage", "activeTab","scripting","background"],
+    "permissions": ["storage","background"],
     "action": {
       
       "default_title": "Ariba PR Helper",
@@ -22,4 +22,6 @@
       }
     ]
   }
+
+
   

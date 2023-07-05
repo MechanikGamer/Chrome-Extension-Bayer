@@ -126,32 +126,6 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
     },2500)
   }
 
-  // //On and off button
-  // let Downloadonoffbutton = document.getElementById("onoffbutton");
-  // Downloadonoffbutton.addEventListener("click", ButtonClickedFunction);
-
-  // function ButtonClickedFunction()
-  // {
-  //   if (Buttonstatus === true && buttonState==="off")
-  //   {
-  //     let IconDownload = document.getElementById("buttononofficon");
-  //     IconDownload.classList.toggle("no-active"); 
-  //     Buttonstatus = false;
-  //     console.log(Buttonstatus)
-  //     return;
-  //   }
-  //   if (Buttonstatus === false && buttonState==="on")
-  //   {
-  //     let IconDownload = document.getElementById("buttononofficon");
-  //     IconDownload.classList.toggle("no-active"); 
-  //     Buttonstatus = true;
-  //     console.log(Buttonstatus)
-  //     return;
-  //   }
-  // }
-
-
-
   
 //Button on and off
 // On startup, set button state
