@@ -27,12 +27,25 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
   });
 
   chrome.storage.sync.get(["country"], function (data) {
-    document.getElementById("country").textContent = data.country;
+    if (data.country === 'Fed'){
+      document.getElementById("country").textContent = 'Russian Federation';
+    }
+    else{
+      document.getElementById("country").textContent = data.country;
+    }
     Country = data.country
   });
 
   chrome.storage.sync.get(["price"], function (data) {
-    document.getElementById("price").textContent = data.price;
+
+    let number = parseInt(data.price, 10); // Converts the string to an integer
+    let formattedNumber = new Intl.NumberFormat('en-US', { 
+        maximumFractionDigits: 0, 
+        useGrouping: true, 
+        groupingSeparator: ' ' 
+    }).format(number);
+    
+    document.getElementById("price").textContent = formattedNumber;
     Price = data.price
   });
 
@@ -86,7 +99,13 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
     let SpanBanner3 = document.getElementById("copied3banner")
     SpanBanner3.classList.add("copied-info")
     SpanBanner3.innerHTML = `\n            \n            <span>\n    <img src="copiedinfo.png" />    </span>`
-    navigator.clipboard.writeText(Country);
+    
+    if (Country === 'Fed') {
+      navigator.clipboard.writeText('Russian Federation');
+    }
+    else {
+      navigator.clipboard.writeText(Country);
+    }
     setTimeout(function(){
       SpanBanner3.classList.remove("copied-info")
       SpanBanner3.innerHTML = `\n            \n            <span>\n     </span>`

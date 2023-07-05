@@ -264,7 +264,14 @@ function PasteInnHowdocTaxonomyCountry()
   DownloadInputHowDoc2[1].value = '' 
 
   let i = 0;
-  let txt = CountryDownloaded ; /* The text */
+  let txt;
+  if (CountryDownloaded === 'Fed'){
+    txt = 'Russian Federation'
+  }
+  else {
+    txt = CountryDownloaded ;
+  }
+
   let speed = 50; /* The speed/duration of the effect in milliseconds */
   
   function typeWriter() {
