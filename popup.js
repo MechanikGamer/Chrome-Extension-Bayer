@@ -7,13 +7,6 @@ let PRNumber;
 let button = document.getElementById("onoffbutton");
 let buttonState = 'on';
 
-
-  
-
-  
-
-
-
   
 chrome.storage.sync.get(["PRNumber"], function (data) {
   document.getElementById("prnumber").textContent = data.PRNumber;
@@ -144,7 +137,6 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
       SpanBanner1.innerHTML = `\n            \n            <span>\n     </span>`
     },2500)
   }
-
   
 //Button on and off
 // On startup, set button state
@@ -158,8 +150,6 @@ button.addEventListener('click', function() {
   // Toggle button state
   buttonState = buttonState === 'on' ? 'off' : 'on';
   
-
-
   // Store button state only if it is 'off'
   if(buttonState === 'off')
   {
@@ -169,7 +159,6 @@ button.addEventListener('click', function() {
   if(buttonState === 'on')
   {
     chrome.storage.sync.set({buttonState: buttonState}, function() {
-      
     });
   }
 });
