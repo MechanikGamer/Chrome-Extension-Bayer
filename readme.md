@@ -1,6 +1,6 @@
 
 # Ariba PR Helper
-
+![Image description](https://raw.githubusercontent.com/username/repository/branch/path/to/image.png)
 
 ### Intro
 Hey everyone! As many of you might relate, I've been seeking a more efficient way to handle copying and pasting data from PR in Ariba and HowDoc. This inspired me to develop a Chrome extension specifically for this purpose, as part of the G2D project. My ultimate goal is to eliminate the repetitive and time-consuming task of manual copy-pasting in our day-to-day work life. I'm excited to share this journey with you all and look forward to your thoughts and feedback! 🌐💻🚀
