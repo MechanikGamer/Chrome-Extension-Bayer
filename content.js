@@ -11,17 +11,11 @@ let PR;
 let PRNumber;
 let buttonState = 'on'
 
-// //nowy kod
-// buttonState = (data.buttonState !== undefined) ? data.buttonState : 'on';
-
-
 //Flags for action Proview
 let Nottriggered = 0;
 let NottriggeredHD2 = 0;
-
 let MaterialGroupDownloaded;
 let CountryDownloaded;
-
 
 //Download PR from Ariba
 function AribaDownloadPR(){
@@ -67,8 +61,6 @@ function AribaDownloadMaterialName() {
   MaterialGroupName = MaterialGroupName.substring(IndexSpace + 1);
   console.log(MaterialGroupName);
   return MaterialGroupName;
-//Dodac wyciecie tylko nazwy
-
 }
 
 //download country name from Ariba
@@ -93,7 +85,6 @@ function AribaDownloadCountry()
   console.log(LastWordlCountryNoSpace);
   return country;
 }
-
 
 //Download Price
 function AribaDownloadPrice()
@@ -173,9 +164,7 @@ function checkURL() {
 checkURL();
 setInterval(PasteIn, 500)
 setInterval(PasteInHowDoc2, 500)
-
 setInterval(ButtonStateDownload, 300)
-
 
 function PasteIn()
 {
@@ -192,7 +181,6 @@ function PasteIn()
     }
     
 }
-
 
 function PasteInnHowdocTaxonomy(){
     //function for pasting data into //taxonomy
@@ -217,7 +205,6 @@ function PasteInnHowdocTaxonomy(){
     let DownloadLabel = document.querySelectorAll('.mat-form-field-label-wrapper')
     DownloadLabel[0].innerHTML = ''
 }
-
 
 //adding variables to HowDoc 2.0
 function PasteInHowDoc2()
@@ -282,6 +269,5 @@ function PasteInnHowdocTaxonomyCountry()
     }
   }
   typeWriter()
-
 }
 

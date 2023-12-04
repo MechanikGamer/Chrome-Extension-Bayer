@@ -3,7 +3,6 @@ let Country;
 let Price; 
 let PR;
 let PRNumber;
-// Define button and initial state
 let button = document.getElementById("onoffbutton");
 let buttonState = 'on';
 
