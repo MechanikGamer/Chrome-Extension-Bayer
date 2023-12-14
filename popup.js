@@ -5,14 +5,12 @@ let PR;
 let PRNumber;
 let button = document.getElementById("onoffbutton");
 let buttonState = 'on';
-
   
 chrome.storage.sync.get(["PRNumber"], function (data) {
   document.getElementById("prnumber").textContent = data.PRNumber;
   PRNumber = data.PRNumber
 });
 
- 
   chrome.storage.sync.get(["materialGroup"], function (data) {
     document.getElementById("material-group").textContent = data.materialGroup;
     MaterialGroup = data.materialGroup
@@ -137,13 +135,11 @@ chrome.storage.sync.get(["PRNumber"], function (data) {
     },2500)
   }
   
-//Button on and off
-// On startup, set button state
+//Button on and off On startup, set button state
 chrome.storage.sync.get(['buttonState'], function(result) {
   buttonState = result.buttonState || 'on';
 });
   
-
 // Attach event listener to the button
 button.addEventListener('click', function() {
   // Toggle button state

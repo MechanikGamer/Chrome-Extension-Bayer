@@ -74,7 +74,6 @@ function AribaDownloadCountry()
   const TextnoSpecialChars = TextoutCountry.replace(/[^a-zA-Z0-9 ]/g, '');
   function getLastWord(TextnoSpecialChars) {
     var n = TextnoSpecialChars.lastIndexOf(" ");
-  
     var res = TextnoSpecialChars.substring(n);
     return res;
   }
@@ -187,7 +186,6 @@ function PasteInnHowdocTaxonomy(){
     let DownloadInputWindow = document.querySelectorAll('[id ^= "mat-input-"]');
     DownloadInputWindow[0].value = '' 
     
-
     let i = 0;
     let txt = MaterialGroupDownloaded ; /* The text */
     let speed = 50; /* The speed/duration of the effect in milliseconds */
@@ -226,7 +224,6 @@ function PasteInHowDoc2()
 
 function PasteInnHowdoc2Taxonomy()
 {
-  
     //pasting material number
     let DownloadInputHowDoc2 = document.querySelectorAll('.mat-input-element')
     DownloadInputHowDoc2[0].value = '' 
